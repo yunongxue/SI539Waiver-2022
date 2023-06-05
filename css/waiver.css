@@ -8,13 +8,15 @@
     margin:auto
 }
 
+.container > figure > img {
+    width: 100%;
+  }
+
 figcaption {
     text-align: center;
     text-transform:capitalize;
 }
-figure img {
-    width:100%;
-}
+
 
 .logo {
     animation: mymove 10s ;
