@@ -1,0 +1,124 @@
+
+.container {
+    width: min(70%, 375px);
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns:1fr;
+    margin:auto
+}
+
+figcaption {
+    text-align: center;
+    text-transform:capitalize;
+}
+figure img {
+    width:100%;
+}
+
+.logo {
+    animation: mymove 10s ;
+}
+
+@keyframes mymove {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+@media (prefers-reduced-motion) {
+    @keyframes mymove {
+        from {opacity: 1;}
+        to {opacity: 1;}
+    }
+}
+
+
+@media (min-width: 650px) {
+
+    .container { 
+        width: 95%;
+        display: grid;
+        justify-items: center;
+        
+        grid-template-columns: repeat(3, 25%);
+        justify-content: space-between;
+        background-image: url("../images/concrete_seamless.png");    
+    }
+    .jump:focus {
+        
+        top: 0px;
+    }
+    figure:nth-child(odd) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    figure:nth-child(even) {
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+  }
+
+  @media (min-width: 750px) {
+    .container { 
+
+        grid-template-columns: repeat(4, 20%);
+        justify-content: space-between;
+        background-image: url("../images/concrete_seamless.png");    
+    }
+    figure:nth-child(odd) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    figure:nth-child(even) {
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+    figure:last-child {
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .container { 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+            
+    }
+    figure:nth-child(n) {
+        width: 20%;
+    }
+    figure:nth-child(4n) {
+        width : 40%;
+        border-width : 10px;
+        border-color: black;
+    }
+    figure:nth-child(2){
+        order: 9;
+    }
+  }
+  @media (min-width: 1050px) {
+    .container { 
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr 50% 1fr 50%;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    
+    figure:nth-child(n){
+        width: 75%;
+        margin-bottom: 20px;
+        order: initial
+    }
+    figure:nth-child(odd) {
+        transform: rotate(-15deg);
+    }
+    figure:nth-child(even) {
+        transform: rotate(15deg);}
+    figure:last-child {
+        transform: rotate(0);
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+  }
